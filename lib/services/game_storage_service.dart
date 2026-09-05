@@ -13,6 +13,8 @@ import '../models/game_state.dart';
 /// choice here (no schema, no migrations, no DB). Loads are defensive: a corrupt
 /// or invalid payload is discarded instead of crashing the app on launch.
 class GameStorageService {
+  // These legacy identifiers predate the TurnTimer name. Keep them stable so
+  // app updates continue to restore existing games and settings.
   static const String _gameKey = 'turnpulse.active_game';
   static const String _settingsKey = 'turnpulse.settings';
 

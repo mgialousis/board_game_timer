@@ -1,10 +1,32 @@
 # TurnTimer — Board Game Timer
 
-A battery-friendly turn timer for tabletop board games. It tracks how long each
-player spends thinking on their turns. The active player's color fills the
-screen and gently pulses so everyone can see whose turn it is from across the
-table. A single tap ends the current turn and starts the next; at the end you
-get per-player statistics.
+[![CI](https://github.com/mgialousis/board_game_timer/actions/workflows/ci.yml/badge.svg)](https://github.com/mgialousis/board_game_timer/actions/workflows/ci.yml)
+
+TurnTimer is a Flutter app for tracking thinking time in tabletop games. The
+active player's color fills the screen, one tap passes the turn, and the final
+summary turns every move into useful per-player statistics.
+
+It supports 2–8 players, optional score and dice-roll tracking, crash-safe local
+persistence, game history, dark mode, and an Android lock-screen mode that keeps
+long sessions usable with the display off. No account, backend, or network
+connection is required.
+
+## Engineering highlights
+
+- A pure, deterministic game engine keeps timing, pause, undo, skip, and dice
+  transitions independently testable.
+- Timestamp-derived elapsed time stays accurate across lifecycle changes
+  without a background timer.
+- A native Android foreground service exposes next/pause actions on the lock
+  screen, then reconciles them through the same Dart state engine.
+- Defensive JSON persistence restores interrupted games and remains compatible
+  with older saved data.
+- 155 unit and widget tests cover the engine, controller, persistence,
+  native-action reconciliation, statistics, and primary UI flows.
+
+The implementation is intentionally dependency-light: `ChangeNotifier` for
+state, `shared_preferences` for local storage, and small service adapters around
+platform behavior. See [Architecture](#architecture) for the design rationale.
 
 ## What it does
 
