@@ -32,7 +32,7 @@ void main() {
       const CustomPaint(painter: _IconPainter(background: true, scale: 1.0)),
       '../assets/icon/app_icon.png',
     );
-  });
+  }, tags: 'golden');
 
   testWidgets('app icon (adaptive foreground, transparent)', (tester) async {
     // Adaptive icons mask to the inner ~66% of the canvas; shrink the artwork
@@ -42,7 +42,7 @@ void main() {
       const CustomPaint(painter: _IconPainter(background: false, scale: 0.72)),
       '../assets/icon/app_icon_foreground.png',
     );
-  });
+  }, tags: 'golden');
 }
 
 /// Player-wheel launcher icon: four color sectors (the players), white

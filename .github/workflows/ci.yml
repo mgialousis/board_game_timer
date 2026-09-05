@@ -35,5 +35,7 @@ jobs:
       - name: Analyze
         run: flutter analyze
 
-      - name: Run tests
-        run: flutter test
+      # Raster output differs by a handful of pixels between Skia builds.
+      # The two icon goldens remain part of the full local macOS suite.
+      - name: Run platform-independent tests
+        run: flutter test --exclude-tags golden
