@@ -1,0 +1,5 @@
+# Copy to android/key.properties and keep the real file private.
+storePassword=replace-with-secret
+keyPassword=replace-with-secret
+keyAlias=upload
+storeFile=/absolute/path/to/upload-keystore.jks

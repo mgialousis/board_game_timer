@@ -35,6 +35,11 @@ migrate_working_dir/
 /coverage/
 /dist/
 
+# Private Android signing configuration
+**/key.properties
+*.jks
+*.keystore
+
 # Symbolication related
 app.*.symbols
 

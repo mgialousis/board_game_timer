@@ -11,6 +11,15 @@ persistence, game history, dark mode, and an Android lock-screen mode that keeps
 long sessions usable with the display off. No account, backend, or network
 connection is required.
 
+## Download for Android
+
+[Download the latest APK](https://github.com/mgialousis/board_game_timer/releases/latest/download/turntimer-android.apk) — no Flutter installation or account needed.
+
+Open the download on an Android phone and allow installation from your browser
+if prompted. This is a directly distributed portfolio build, not a Play Store
+listing. See the [release notes](https://github.com/mgialousis/board_game_timer/releases/latest)
+for checksums and the [installation and build guide](docs/ANDROID_RELEASE.md).
+
 ## Preview
 
 Real Android emulator captures using fictional players.
